@@ -1,0 +1,19 @@
+.Input input {
+    height: 20px;
+    width: 150px;
+    padding: 0 2px;
+    border: 3px solid #000;
+    border-radius: 0;
+    font-size: 12px;
+    outline: none;
+}
+.Input input:active {
+  color: #fff;
+  background: #000;
+  border-color: #fff;
+}
+.Input .Alert         { color: black; display: block; font-size: 0.9em; margin: 2px;}
+.Input .Alert.None    { background-color: white; }
+.Input .Alert.Error   { background-color: red;}
+.Input .Alert.Info    { background-color: yellow;}
+.Input .Alert.Warning { background-color: amber;}

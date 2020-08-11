@@ -1,0 +1,23 @@
+import React from 'react';
+import './button.css';
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log('this is:', this);
+  }
+
+  render() {
+    return (
+      <button className="Button" onClick={this.handleClick}>
+        Click me
+      </button>
+    );
+  }
+}
+
+export default Button;
