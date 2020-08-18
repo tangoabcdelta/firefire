@@ -1,0 +1,14 @@
+.form-container {}
+    .form-field-container {
+        display: flex;
+    }
+        .form-field-container * {
+            margin: 5px;
+            padding: 5px;
+        }
+        .form-field-container label {
+            
+        }
+        .form-field-container input {
+            flex: 1;
+        }

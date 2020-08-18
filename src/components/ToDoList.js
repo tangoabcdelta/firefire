@@ -7,27 +7,19 @@ import dispatcher from "../store/dispatcher";
 class ToDoList extends React.Component {
     constructor() {
         super();
-        // this.state = {
-        //    todos: TodoStore.getAll()
-        // }
-        
         this.state = {
             todos: TodoStore.getAll()
-        }
-        
-        // this.state = {
-        //    todos: dispatcher.dispatch({ type: "GETALL" })
-        //};
-        
+        };
     }
     
     componentDidMount() {
-        // TodoStore.on('change', ()=> {
-        //    console.log('Change event fired');
-        //    this.setState({
-        //        todos: TodoStore.getAll()
-        //    });
-        // });
+        
+        TodoStore.on('change', ()=> {
+            console.log('Change event fired');
+            this.setState({
+                todos: TodoStore.getAll()
+            });
+        });
     }
     
     callCreateToDo() {

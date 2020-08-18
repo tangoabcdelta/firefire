@@ -13,6 +13,8 @@ const admin = require('firebase-admin');
 const { Readability } = require('@mozilla/readability');
 const automate = require('./automate');
 const sample = require('./automate/sample');
+const gatekeeper = require('./server/middleware/gatekeeper');
+const jokes = require('jokes');
 
 {
     // Go to:
@@ -39,12 +41,27 @@ const sample = require('./automate/sample');
     //ref = db.ref("server/saving-data/fireblog/");
     ref = db.ref("/");
     
-    // Attach an asynchronous callback to read the data at our posts reference
-    ref.orderByKey().limitToLast(2).on("value", function(snapshot) {
-        console.log('snapshot::', snapshot.val());
-    }, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
+    (() => {
+        // Not executing this block for now
+        // Attach an asynchronous callback to read the data at our posts reference
+        ref.orderByKey().limitToLast(2).on("value", snapshot => {
+            console.log('snapshot::', snapshot.val());
+        }, errorObject => {
+            console.log("The read failed: " + errorObject.code);
+        });
+    })();
+    
+    (async () => {
+        let snapshot;
+        try {
+            snapshot = await ref.orderByKey().limitToLast(2).on("value");
+            console.log(snapshot);
+        }
+        catch (errorObject){
+            console.log("The read failed: " + errorObject);
+        }
     });
+
   
 }
 var app = express();
@@ -65,11 +82,8 @@ app.get('/add?:url', async (req, res) => {
     const db = admin.database();
     console.clear();
     const { query: { url } } = req;
-    const key = Buffer.from(url).toString('base64');
     const ref = db.ref("public/default/articles");
     
-    console.log(`retrieving HASH#: ${key}::${url}`);
-
     //let result = checkIfExists(ref, key);
     //console.log(`checkIfExists::${Boolean(result)}`);
     //console.log(result);
@@ -85,7 +99,8 @@ app.get('/add?:url', async (req, res) => {
 });
 
 const checkIfExists = async (ref, key) => {
-    return ref.equalTo(key).once("value", e => e.val());
+    let val = await ref.equalTo(key).once("value", e => e.val());
+    return val;
 }
 const checkValue = async (ref, res) => {
     let val = await ref.orderByKey().limitToLast(1).once("value", e => e.val());
@@ -147,7 +162,9 @@ app.get('/ccc', function(req, res) {
 });
 
 
-
+app.get('/jokes', (req, res) => {
+    res.status(200).send(jokes());
+})
 
 
 

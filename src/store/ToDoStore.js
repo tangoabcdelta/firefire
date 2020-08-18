@@ -1,11 +1,10 @@
 import React from 'react';
-// import { EventEmitter } from 'events';
+import { EventEmitter } from 'events';
 import dispatcher from './dispatcher';
 
-// class ToDoStore extends EventEmitter {
-class ToDoStore {
+class ToDoStore extends EventEmitter {
   constructor() {
-    // super();
+    super();
     this.todos = [
       {
         id: 1,
@@ -38,7 +37,7 @@ class ToDoStore {
     
     
     // console.log('createToDo called', arguments, this.todos);
-    // this.emit('change');
+    this.emit('change');
   }
   
   deleteToDo(id) {

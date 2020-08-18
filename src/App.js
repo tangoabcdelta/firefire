@@ -26,10 +26,15 @@ import PrivateRoute from "./routes/PrivateRoute";
 
 import Input from "./atoms/input.text";
 
+
+import store from "./store/Generic";
+import UserStore from "./store/UserStore";
+
 import "./App.css";
 import logo from "./logo.svg";
 
-class App extends React.Component {
+//class App extends React.Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,9 +58,9 @@ class App extends React.Component {
     let secondsSinceLastRefresh = this.state.secondsSinceLastRefresh;
     setTimeout(() => {
       secondsSinceLastRefresh++;
-      this.setState({
-        secondsSinceLastRefresh: secondsSinceLastRefresh
-      });
+      //this.setState({
+      //  secondsSinceLastRefresh: secondsSinceLastRefresh
+      //});
     }, 1000);
 
     return (

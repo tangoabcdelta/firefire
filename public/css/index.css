@@ -1,0 +1,37 @@
+* {}
+
+
+.flex-container {
+    1display: flex;    
+}
+    .flex-container div {
+        margin: 10px;
+        background: #ccc;
+    }
+
+
+
+
+.flex-container.row {
+    1flex-direction: row;
+    1flex-direction: row-reverse;
+    1flex-wrap: nowrap;    
+    1flex: 0 1 auto;
+}
+.flex-container.row div {
+    1width: 40%;
+    1flex-basis: fill;
+    1flex: 0 1 auto;
+}
+
+
+.flex-container.column {
+    flex-direction: column;
+    1flex-direction: column-reverse;
+    1flex-wrap: nowrap;
+}
+
+.flex-container.column div {
+    1height: 40px;
+    flex-basis: 30%;
+}

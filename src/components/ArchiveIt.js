@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import Input from '../atoms/input.text';
 import Button from '../atoms/button';
 
+
 class ArchiveIt extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,17 @@ class ArchiveIt extends React.Component {
   }
 
   render() {
-    console.log(Readability);
+    window.setTimeout(() => {
+        console.log(window.Readability);
+        if (window.renderCalled) {
+            window.renderCalled++
+        } else {
+            window.renderCalled = 1;
+        }; 
+    }, 0)
     return (
       <div className="ArchiveIt">
-          <h1>Archive:</h1>
+          <h1>Archive:Render Called {window.renderCalled} x times</h1>
           <Input onEnter={this.cb.bind(this)} /> <Button />
       </div>
     );
