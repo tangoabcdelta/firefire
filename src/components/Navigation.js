@@ -8,11 +8,14 @@ function Navigation() {
           <li><a tabIndex="0" href="/">Home</a></li>
           <li><a tabIndex="0"href="/projects">Projects</a>
             <ul>
+              <li><a tabIndex="0" href="/projects/hook">Hook</a></li>
+              <li><a tabIndex="0" href="/projects/inheritance">Inheritance</a></li>
+              <li><a tabIndex="0" href="/projects/nesting">Nesting</a></li>
               <li><a tabIndex="0" href="/input">Input</a></li>
               <li><a tabIndex="0" href="/projects/ToDo">ToDo List</a></li>
               <li><a tabIndex="0" href="/projects/tweet-saver">Tweet Saver</a></li>
               <li><a tabIndex="0" href="/projects/archive-it">Archive It!</a></li>
-              
+              <li><a tabIndex="0" href="/authorized/archive-it-2">Archive 2</a></li>
               <li>■</li>
               <li><a tabIndex="0" href="/projects/some-project">For future projects</a> &nbsp; 🥰</li>
             </ul>

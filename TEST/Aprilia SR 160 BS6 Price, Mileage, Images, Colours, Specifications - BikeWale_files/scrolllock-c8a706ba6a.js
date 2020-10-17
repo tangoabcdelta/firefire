@@ -1,0 +1,1 @@
+var HandleBodyScroll=function(){function o(){r=document.documentElement,n=r.scrollTop||window.pageYOffset}function l(){o(),r.classList.add("lock-browser-scroll"),r.style.top=-n+"px"}function c(){o();var l=parseInt(r.style.top);r.classList.remove("lock-browser-scroll"),window.scrollTo(0,-l)}var r,n;return{lockScroll:l,unlockScroll:c}}();

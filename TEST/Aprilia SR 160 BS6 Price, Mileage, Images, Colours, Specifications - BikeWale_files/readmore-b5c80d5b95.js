@@ -1,0 +1,1 @@
+var ToggleReadMore=function(){function e(){$(".question-answer-wrapper__read-more").click(function(e){$(this).parent(".question-answer-wrapper__answer-box").addClass("question-answer-wrapper--active")})}function r(){e()}return{registerEvents:r}}();

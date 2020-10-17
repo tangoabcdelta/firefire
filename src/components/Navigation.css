@@ -12,8 +12,14 @@
 
 .Navigation:hover {
   background: rgba(255, 255, 255, 1);
-  
 }
+
+.Navigation > ul > li > ul {
+  display: none;
+}
+  .Navigation:hover > ul > li > ul {
+    display: block;
+  }
 
 .Navigation ul {
   margin: 10px 5px 10px 15px;
@@ -39,3 +45,4 @@
   color: #000;
   border-color: #000;
 }
+
