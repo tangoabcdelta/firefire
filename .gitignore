@@ -7,3 +7,4 @@ start.sh
 uptime.js
 crawl
 crawl/*
+build/*
