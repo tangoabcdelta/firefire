@@ -10,6 +10,7 @@ import {
 
 import { B as Hook } from "./components/Hook.functional";
 import Navigation from "./components/Navigation";
+import AllProjects from "./components/AllProjects";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
@@ -85,9 +86,11 @@ class App extends React.PureComponent {
           </div>
         </header>
         <Navigation />
+
         <section className="App-body">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={AllProjects} />
+            <Route path="/home" exact component={Home} />
             <Route
               path="/input"
               exact

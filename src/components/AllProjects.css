@@ -1,0 +1,33 @@
+.AllProjects {
+  margin-left: 300px;
+  background: transparent;
+}
+
+  .AllProjects .flex-container {
+    justify-content: space-around;
+  }
+  .AllProjects .flex-container li {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    flex-basis: 120px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .AllProjects .flex-container li {
+    background-color: black;
+    border: 3px solid #fff;
+    border-radius: 0px;
+  }
+  .AllProjects .flex-container li a {
+    color: #61dafb;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    flex-basis: 120px;
+    padding: 20px;
+  }
+      .AllProjects .flex-container li a:hover {
+        text-decoration: underline;
+      }
